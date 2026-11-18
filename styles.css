@@ -326,6 +326,10 @@ button {
   padding-left: 5.3vw;
 }
 
+.title-suffix {
+  display: inline;
+}
+
 .hero-title em {
   color: transparent;
   font-style: normal;
@@ -1159,6 +1163,11 @@ button {
 
   .line-two {
     padding-left: 0;
+  }
+
+  .line-two em,
+  .title-suffix {
+    display: block;
   }
 
   .hero-bottom {
