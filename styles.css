@@ -1840,6 +1840,33 @@ body {
   text-align: right;
 }
 
+.brand-ornament {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  height: 31px;
+  padding-left: 2px;
+}
+
+.brand-ornament i {
+  width: 7px;
+  height: 7px;
+  background: var(--acid);
+  box-shadow: 7px 7px 0 rgba(245, 244, 239, .36);
+}
+
+.brand-ornament b {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.brand-ornament small {
+  align-self: flex-end;
+  margin-bottom: 4px;
+  font-family: "Courier New", monospace;
+  font-size: 7px;
+}
+
 .collage-title {
   position: absolute;
   top: 31%;
@@ -1859,6 +1886,12 @@ body {
 .collage-title span,
 .collage-title em {
   display: block;
+}
+
+.collage-title .hero-line-name {
+  font-size: .82em;
+  letter-spacing: -.065em;
+  white-space: nowrap;
 }
 
 .collage-title em {
@@ -2264,6 +2297,10 @@ body {
     width: calc(100% - 32px);
     font-size: clamp(48px, 15vw, 118px);
     line-height: .9;
+  }
+
+  .collage-title .hero-line-name {
+    font-size: .7em;
   }
 
   .collage-title em {
