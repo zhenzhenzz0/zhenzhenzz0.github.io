@@ -99,7 +99,7 @@ button {
   left: 0;
   z-index: 20;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr auto;
   align-items: start;
   width: 100%;
   padding: 22px var(--pad);
@@ -1085,10 +1085,14 @@ button {
     grid-template-columns: 1fr auto;
   }
 
-  .header-meta,
   .desktop-nav,
   .availability {
     display: none;
+  }
+
+  .header-meta {
+    display: block;
+    font-size: 8px;
   }
 
   .menu-button {
