@@ -6,6 +6,28 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 const homeView = document.querySelector('main');
 const detailView = document.querySelector('#project-view');
+const heroSection = document.querySelector('.collage-hero');
+const heroLines = document.querySelectorAll('.hero-line-name, .collage-title em');
+
+heroLines.forEach((line) => {
+  const text = line.textContent;
+  line.setAttribute('aria-label', text);
+  line.textContent = '';
+
+  [...text].forEach((character, index) => {
+    const letter = document.createElement('span');
+    letter.className = 'type-char';
+    letter.textContent = character === ' ' ? '\u00a0' : character;
+    letter.style.setProperty('--char-index', index);
+    line.appendChild(letter);
+  });
+});
+
+const updateHeroHeader = () => {
+  const isHome = !homeView.hidden;
+  const inHero = isHome && heroSection.getBoundingClientRect().bottom > 100;
+  document.body.classList.toggle('hero-in-view', inHero);
+};
 
 const projects = [
   {
@@ -99,6 +121,7 @@ const showProject = (project) => {
 
   homeView.hidden = true;
   detailView.hidden = false;
+  document.body.classList.remove('hero-in-view');
   setDetailImage('#detail-image', project.image, project.alt);
   setDetailImage('#detail-image-a', project.image, project.alt, '18% center');
   setDetailImage('#detail-image-b', project.image, project.alt, '82% center');
@@ -121,6 +144,7 @@ const showHome = () => {
   detailView.hidden = true;
   homeView.hidden = false;
   document.title = '林美言® — AIGC Visual Designer';
+  window.requestAnimationFrame(updateHeroHeader);
 };
 
 const renderRoute = () => {
@@ -187,6 +211,7 @@ const spreads = [...document.querySelectorAll('.project-spread')];
 let parallaxFrame = 0;
 
 const updateParallax = () => {
+  updateHeroHeader();
   spreads.forEach((spread) => {
     const rect = spread.getBoundingClientRect();
     const progress = (rect.top / window.innerHeight) * 22;

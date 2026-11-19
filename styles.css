@@ -1789,7 +1789,9 @@ body {
   min-height: calc(100svh - 20px);
   overflow: hidden;
   isolation: isolate;
-  background: #d6d6d6;
+  background:
+    radial-gradient(circle at 64% 32%, rgba(255, 208, 117, .34), transparent 28%),
+    linear-gradient(145deg, #e86608 0%, #ff8615 53%, #e55d00 100%);
   border-radius: 1px;
 }
 
@@ -1800,8 +1802,8 @@ body {
   z-index: -1;
   pointer-events: none;
   background:
-    linear-gradient(90deg, transparent calc(20% - .5px), rgba(0,0,0,.05) 20%, transparent calc(20% + .5px)),
-    linear-gradient(90deg, transparent calc(80% - .5px), rgba(0,0,0,.05) 80%, transparent calc(80% + .5px));
+    linear-gradient(90deg, transparent calc(20% - .5px), rgba(62,27,4,.1) 20%, transparent calc(20% + .5px)),
+    linear-gradient(90deg, transparent calc(80% - .5px), rgba(62,27,4,.1) 80%, transparent calc(80% + .5px));
 }
 
 .collage-stage::after {
@@ -1812,7 +1814,7 @@ body {
   top: 40%;
   width: clamp(60px, 8vw, 130px);
   aspect-ratio: 1;
-  opacity: .2;
+  opacity: .16;
   background:
     linear-gradient(90deg, #fff 50%, transparent 50%) 0 0 / 25% 25%,
     linear-gradient(#fff 50%, transparent 50%) 0 0 / 25% 25%;
@@ -1867,12 +1869,17 @@ body {
   font-size: 7px;
 }
 
+body.hero-in-view .site-header {
+  mix-blend-mode: normal;
+  color: #17100b;
+}
+
 .collage-title {
   position: absolute;
   top: 31%;
-  left: 50%;
+  left: 43%;
   z-index: 3;
-  width: min(79vw, 1120px);
+  width: min(58vw, 900px);
   margin: 0;
   transform: translateX(-50%);
   font-family: var(--font-cn);
@@ -1883,8 +1890,8 @@ body {
   text-align: center;
 }
 
-.collage-title span,
-.collage-title em {
+.collage-title > span,
+.collage-title > em {
   display: block;
 }
 
@@ -1894,6 +1901,42 @@ body {
   white-space: nowrap;
 }
 
+.type-char {
+  display: inline-block;
+  transform-origin: 50% 80%;
+  transition: color .2s ease, text-shadow .25s ease;
+  will-change: transform;
+}
+
+.hero-line-name:hover .type-char,
+.collage-title em:hover .type-char {
+  animation: type-wave .55s cubic-bezier(.22, .8, .28, 1) both;
+  animation-delay: calc(var(--char-index) * 22ms);
+}
+
+.hero-line-name .type-char:hover {
+  color: #fff8ed;
+  text-shadow: 0 2px 0 #8e3600;
+}
+
+.collage-title em .type-char:hover {
+  color: #285c1a;
+}
+
+@keyframes type-wave {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  42% {
+    transform: translateY(-.13em) rotate(calc((var(--char-index) - 3) * 1.3deg));
+  }
+
+  72% {
+    transform: translateY(.025em) rotate(calc((var(--char-index) - 5) * -.8deg));
+  }
+}
+
 .collage-title em {
   position: relative;
   width: max-content;
@@ -1901,7 +1944,7 @@ body {
   margin: .16em auto 0;
   padding: .06em .18em .12em;
   border: 2px solid #111;
-  background: #47f42b;
+  background: #a9cc63;
   box-shadow: 7px 7px 0 rgba(17, 17, 17, .18);
   font-style: normal;
   transform: rotate(-2.6deg);
@@ -1928,7 +1971,7 @@ body {
 .collage-note {
   position: absolute;
   top: 18.5%;
-  left: 50%;
+  left: 43%;
   z-index: 4;
   padding: 9px 17px 10px;
   border: 2px solid #111;
@@ -2032,7 +2075,7 @@ body {
   min-width: 118px;
   padding: 8px 10px;
   border: 1px solid rgba(0,0,0,.22);
-  background: rgba(224,224,224,.8);
+  background: rgba(255, 224, 186, .82);
   color: #111;
   font-family: "Courier New", monospace;
   font-size: 10px;
@@ -2068,6 +2111,78 @@ body {
   height: 8px;
   background: #55ff20;
   box-shadow: -8px 8px #ff4b10;
+}
+
+.hero-ip-card {
+  position: absolute;
+  top: 17%;
+  right: 2.4%;
+  z-index: 4;
+  width: 29%;
+  height: 70%;
+  margin: 0;
+  overflow: hidden;
+  border: 3px solid #18110c;
+  background: #f2710b;
+  box-shadow:
+    10px 10px 0 rgba(255, 239, 217, .48),
+    18px 18px 0 rgba(29, 15, 6, .2);
+  transform: rotate(2.2deg);
+  transition: transform .55s cubic-bezier(.2,.7,.2,1), box-shadow .55s ease;
+}
+
+.hero-ip-card::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  z-index: 2;
+  border: 1px solid rgba(255,255,255,.42);
+  pointer-events: none;
+}
+
+.hero-ip-card:hover {
+  box-shadow:
+    15px 14px 0 rgba(255, 239, 217, .56),
+    24px 25px 0 rgba(29, 15, 6, .2);
+  transform: rotate(-1.2deg) translateY(-6px);
+}
+
+.hero-ip-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .5s ease;
+}
+
+.hero-ip-card:hover img {
+  filter: saturate(1.08) contrast(1.03);
+  transform: scale(1.035);
+}
+
+.hero-ip-card figcaption {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  padding: 7px 9px;
+  background: #17100b;
+  color: #fff5e8;
+  font-family: "Courier New", monospace;
+  font-size: 6px;
+  letter-spacing: .08em;
+  transform: rotate(-1deg);
+}
+
+.hero-ip-card figcaption b {
+  color: #b7db70;
+  font-size: 8px;
+  font-weight: 400;
 }
 
 .poster-symbol {
@@ -2109,7 +2224,7 @@ body {
   right: 3.3%;
   width: 14%;
   aspect-ratio: 1.1;
-  background: #19a4fb;
+  background: #a9cc63;
   color: #111;
   clip-path: polygon(0 0, 100% 0, 100% 84%, 38% 84%, 30% 100%, 30% 84%, 0 84%);
 }
@@ -2117,7 +2232,7 @@ body {
 .scrap {
   position: absolute;
   z-index: 1;
-  color: rgba(255,255,255,.55);
+  color: rgba(255, 247, 237, .5);
   font-family: var(--font-cn);
   font-size: clamp(54px, 7vw, 118px);
   font-weight: 700;
@@ -2136,7 +2251,7 @@ body {
 .scrap-left-small {
   left: 29%;
   bottom: 12%;
-  color: rgba(255,255,255,.38);
+  color: rgba(255, 247, 237, .36);
   font-size: clamp(22px, 3.4vw, 55px);
   transform: rotate(-90deg);
 }
@@ -2223,7 +2338,7 @@ body {
   max-width: 23em;
   margin: 0;
   padding: 8px 10px;
-  background: rgba(214, 214, 214, .88);
+  background: rgba(255, 226, 190, .82);
   box-shadow: 7px 7px 0 rgba(255, 255, 255, .36);
   font-family: var(--font-cn);
   font-size: clamp(10px, .9vw, 13px);
@@ -2241,8 +2356,8 @@ body {
   justify-content: flex-end;
   gap: 60px;
   padding-top: 10px;
-  border-top: 1px solid rgba(0,0,0,.22);
-  color: #444;
+  border-top: 1px solid rgba(52,22,4,.28);
+  color: #3e210e;
   font-family: "Courier New", monospace;
   font-size: 7px;
   letter-spacing: .04em;
@@ -2293,6 +2408,7 @@ body {
   }
 
   .collage-title {
+    left: 50%;
     top: 29%;
     width: calc(100% - 32px);
     font-size: clamp(48px, 15vw, 118px);
@@ -2357,9 +2473,7 @@ body {
   }
 
   .symbol-blue {
-    top: 48%;
-    right: -9%;
-    width: 25%;
+    display: none;
   }
 
   .scrap-left {
@@ -2373,9 +2487,21 @@ body {
   }
 
   .scrap-right {
-    right: 7%;
-    bottom: 17%;
-    font-size: 30px;
+    display: none;
+  }
+
+  .hero-ip-card {
+    top: 43%;
+    right: 3%;
+    width: 42%;
+    height: 38%;
+    border-width: 2px;
+    transform: rotate(2deg);
+  }
+
+  .hero-ip-card figcaption {
+    right: 9px;
+    bottom: 9px;
   }
 
   .collage-intro {
