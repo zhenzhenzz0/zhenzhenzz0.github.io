@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#000000" />
     <title>林美言® — AIGC Visual Designer</title>
     <link rel="preload" as="image" href="./assets/ip-character-hero.webp" fetchpriority="high" />
-    <link rel="stylesheet" href="./styles.css?v=12" />
+    <link rel="stylesheet" href="./styles.css?v=13" />
   </head>
   <body>
     <div class="grain" aria-hidden="true"></div>
@@ -36,7 +36,7 @@
     </nav>
 
     <main id="top">
-      <section class="hero-carousel" id="hero" aria-label="首页轮播" aria-roledescription="carousel">
+      <section class="hero-carousel" id="hero" aria-label="首页">
         <article class="carousel-slide is-active" data-slide="0" data-theme="light" aria-hidden="false">
           <div class="hero collage-hero" aria-labelledby="hero-title">
             <div class="hero-topline">
@@ -76,53 +76,42 @@
             </div>
           </div>
         </article>
-
-        <a class="carousel-slide carousel-work-slide" data-slide="1" data-theme="dark" href="#project/mossio" aria-hidden="true">
-          <img src="./assets/project-01.png" alt="MOSSIO 苔藓世界" />
-          <span class="slide-shade"></span>
-          <span class="slide-kicker">SELECTED WORLD / 01</span>
-          <span class="slide-number">01</span>
-          <span class="slide-title">MOSSIO</span>
-          <span class="slide-caption">AI Art Direction · World Building</span>
-        </a>
-
-        <a class="carousel-slide carousel-work-slide" data-slide="2" data-theme="dark" href="#project/stillwater" aria-hidden="true">
-          <img src="./assets/project-02.jpg" alt="STILLWATER 雾山湖泊" loading="lazy" />
-          <span class="slide-shade"></span>
-          <span class="slide-kicker">SELECTED WORLD / 02</span>
-          <span class="slide-number">02</span>
-          <span class="slide-title">STILLWATER</span>
-          <span class="slide-caption">Visual Campaign · AI Image</span>
-        </a>
-
-        <a class="carousel-slide carousel-work-slide" data-slide="3" data-theme="dark" href="#project/wild-signal" aria-hidden="true">
-          <img src="./assets/project-03.jpg" alt="WILD SIGNAL 日落森林" loading="lazy" />
-          <span class="slide-shade"></span>
-          <span class="slide-kicker">SELECTED WORLD / 03</span>
-          <span class="slide-number">03</span>
-          <span class="slide-title">WILD SIGNAL</span>
-          <span class="slide-caption">Concept Film · Motion Direction</span>
-        </a>
-
-        <div class="hero-dots" aria-label="轮播分页">
-          <button class="is-active" type="button" data-slide-to="0" aria-label="第 1 页"></button>
-          <button type="button" data-slide-to="1" aria-label="第 2 页"></button>
-          <button type="button" data-slide-to="2" aria-label="第 3 页"></button>
-          <button type="button" data-slide-to="3" aria-label="第 4 页"></button>
-        </div>
       </section>
 
       <section class="clone-manifesto">
         <p class="designer-words"><span>设计师</span><span>自白</span></p>
         <p class="manifesto-copy">这里是一处仍在生长中的实验现场，让技术成为放大想象力的引擎，而不是替代判断与感受力的答案。<br />我更关心 AI 如何参与创作、触发偏离、制造新秩序。</p>
-        <div class="manifesto-collage" aria-label="作品拼贴">
-          <img class="collage-img c1" src="./assets/project-03.jpg" alt="森林作品" loading="lazy" />
-          <img class="collage-img c2" src="./assets/project-01.png" alt="苔藓作品" loading="lazy" />
-          <img class="collage-img c3" src="./assets/project-02.jpg" alt="湖泊作品" loading="lazy" />
-          <img class="collage-img c4" src="./assets/project-04.jpg" alt="落日作品" loading="lazy" />
-          <img class="collage-img c5" src="./assets/project-05.jpg" alt="海岸作品" loading="lazy" />
+        <div class="manifesto-collage fan-collage" aria-label="作品卡片">
+          <div class="fan-row fan-row-top">
+            <a class="fan-card" href="#project/mossio" style="--r:-7deg; --y:10px; --i:0">
+              <img src="./assets/project-01.png" alt="MOSSIO 苔藓世界" loading="lazy" />
+              <span>01</span>
+            </a>
+            <a class="fan-card" href="#project/stillwater" style="--r:3deg; --y:-8px; --i:1">
+              <img src="./assets/project-02.jpg" alt="STILLWATER 雾山湖泊" loading="lazy" />
+              <span>02</span>
+            </a>
+            <a class="fan-card" href="#project/wild-signal" style="--r:-3deg; --y:16px; --i:2">
+              <img src="./assets/project-03.jpg" alt="WILD SIGNAL 日落森林" loading="lazy" />
+              <span>03</span>
+            </a>
+          </div>
           <div class="creative-ai">创意<span>现场</span></div>
           <a class="clone-outline-button" href="#work">查看更多 <b>→</b></a>
+          <div class="fan-row fan-row-bottom">
+            <a class="fan-card" href="#project/afterglow" style="--r:6deg; --y:12px; --i:3">
+              <img src="./assets/project-04.jpg" alt="AFTERGLOW 雾山光晕" loading="lazy" />
+              <span>04</span>
+            </a>
+            <a class="fan-card" href="#project/terra" style="--r:-4deg; --y:-6px; --i:4">
+              <img src="./assets/project-05.jpg" alt="TERRA 海岸土地" loading="lazy" />
+              <span>05</span>
+            </a>
+            <a class="fan-card" href="#project/mossio" style="--r:8deg; --y:8px; --i:5">
+              <img src="./assets/project-01.png" alt="苔藓视觉" loading="lazy" />
+              <span>06</span>
+            </a>
+          </div>
         </div>
         <div class="manifesto-strip"><img src="./assets/project-04.jpg" alt="雾山视觉作品" loading="lazy" /></div>
       </section>
@@ -219,6 +208,6 @@
       </a>
     </section>
 
-    <script src="./script.js?v=11"></script>
+    <script src="./script.js?v=13"></script>
   </body>
 </html>
