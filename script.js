@@ -82,7 +82,7 @@ const projects = [
     category: 'AI Art Direction / World Building',
     code: 'LMY—001',
     services: 'Art Direction<br />AI Image<br />Visual World',
-    heading: 'A world hidden in moss.',
+    heading: '藏在苔藓里的世界。',
     description:
       'MOSSIO 以湿润苔藓、古石与隐约可见的鸟居为线索，构建一个安静而具有生命感的自然场域。作品将真实材质与生成式影像结合，在宏观与微观之间寻找观看的张力。',
   },
@@ -96,7 +96,7 @@ const projects = [
     category: 'Visual Campaign / AI Image',
     code: 'LMY—002',
     services: 'Creative Direction<br />AI Image<br />Campaign',
-    heading: 'Where silence becomes landscape.',
+    heading: '当静默成为风景。',
     description:
       'STILLWATER 从雾、山与水的静默关系中提取视觉语言。冷暖交错的自然光线让空间显得遥远而真实，作品探索生成式影像如何承载平静、记忆与距离感。',
   },
@@ -110,7 +110,7 @@ const projects = [
     category: 'Concept Film / Motion Direction',
     code: 'LMY—003',
     services: 'Art Direction<br />Motion Study<br />Concept Film',
-    heading: 'A signal from the wild.',
+    heading: '来自荒野的信号。',
     description:
       'WILD SIGNAL 将落日、冷杉与雾气组织成一段具有节奏感的视觉叙事。画面以自然为信号源，在秩序与未知之间制造轻微的失控感。',
   },
@@ -124,7 +124,7 @@ const projects = [
     category: 'AI Photography / Art Direction',
     code: 'LMY—004',
     services: 'AI Photography<br />Color Design<br />Art Direction',
-    heading: 'The last light before night.',
+    heading: '夜幕前的最后一束光。',
     description:
       'AFTERGLOW 以落日后最短暂的光线为核心，让层叠山峦逐渐退入黑暗。作品关注色温、层次与情绪之间的细微变化，把环境光转化为一种可视的时间。',
   },
@@ -138,7 +138,7 @@ const projects = [
     category: 'Brand World / Generative Image',
     code: 'LMY—005',
     services: 'Brand World<br />Generative Image<br />Visual System',
-    heading: 'An earth beyond the horizon.',
+    heading: '地平线之外的土地。',
     description:
       'TERRA 将海岸、瀑布、森林与岩石组合成一个超越现实尺度的品牌世界。作品通过连续的材质、色彩与地貌语言，建立具有延展性的生成式视觉系统。',
   },

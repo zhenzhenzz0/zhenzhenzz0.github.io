@@ -1594,12 +1594,13 @@ body {
 }
 
 .detail-story h2 {
-  max-width: 9em;
+  max-width: 12em;
   margin: 28px 0 42px;
+  font-family: var(--font-cn);
   font-size: clamp(46px, 6.2vw, 110px);
-  font-weight: 500;
-  line-height: .9;
-  letter-spacing: -.065em;
+  font-weight: 600;
+  line-height: 1.06;
+  letter-spacing: .01em;
 }
 
 .detail-story > p {
@@ -2745,10 +2746,11 @@ body.hero-in-view .clone-site-header {
   align-items: flex-end;
   margin: 0;
   color: #f2f0e8;
+  font-family: var(--font-cn);
   font-size: clamp(58px, 9vw, 144px);
-  font-weight: 500;
-  line-height: .84;
-  letter-spacing: -.075em;
+  font-weight: 600;
+  line-height: .98;
+  letter-spacing: .02em;
 }
 
 .designer-words span:last-child {
@@ -2801,10 +2803,11 @@ body.hero-in-view .clone-site-header {
   left: 50%;
   z-index: 6;
   color: #f2f0e8;
+  font-family: var(--font-cn);
   font-size: clamp(55px, 8.5vw, 136px);
-  font-weight: 500;
-  line-height: .8;
-  letter-spacing: -.08em;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .02em;
   transform: translate(-50%, -50%);
   white-space: nowrap;
 }
@@ -2863,10 +2866,11 @@ body.hero-in-view .clone-site-header {
 
 .recent-heading h2 {
   margin: 0;
+  font-family: var(--font-cn);
   font-size: clamp(40px, 6vw, 96px);
-  font-weight: 500;
-  line-height: .9;
-  letter-spacing: -.07em;
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: .01em;
 }
 
 .recent-heading h2 span,
@@ -2947,10 +2951,11 @@ body.hero-in-view .clone-site-header {
 .creative-title-wrap h2 {
   grid-row: span 2;
   margin: 0;
+  font-family: var(--font-cn);
   font-size: clamp(68px, 10vw, 170px);
-  font-weight: 500;
-  line-height: .74;
-  letter-spacing: -.08em;
+  font-weight: 600;
+  line-height: .98;
+  letter-spacing: .02em;
 }
 
 .creative-title-wrap h2 i {
@@ -3043,10 +3048,11 @@ body.hero-in-view .clone-site-header {
 
 .future-cta p {
   margin: 0;
+  font-family: var(--font-cn);
   font-size: clamp(48px, 8.2vw, 135px);
-  font-weight: 500;
-  line-height: .86;
-  letter-spacing: -.08em;
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: .02em;
 }
 
 .future-cta p:nth-child(2) span {
