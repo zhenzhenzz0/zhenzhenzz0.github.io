@@ -2797,6 +2797,7 @@ body.hero-in-view .clone-site-header {
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: clamp(14px, 1.7vw, 24px);
+  background: #161616;
   opacity: 0;
   filter: blur(12px);
   box-shadow: 0 26px 60px rgba(0, 0, 0, .5);
