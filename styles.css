@@ -3267,3 +3267,75 @@ body.hero-in-view .clone-site-header {
     grid-template-columns: 1fr;
   }
 }
+
+/* Click burst effect — cloned from yitiao.art */
+.click-burst-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.emoji-burst {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: var(--emoji-size, 24px);
+  line-height: 1;
+  user-select: none;
+  will-change: transform, opacity;
+  animation: emoji-burst 0.9s ease-out forwards;
+}
+
+@keyframes emoji-burst {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translate(0) scale(0.65) rotate(0);
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translate3d(var(--emoji-dx), var(--emoji-dy), 0) scale(1.15)
+      rotate(var(--emoji-rotate));
+  }
+}
+
+.blessing-burst {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(14, 14, 18, 0.82);
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 0.92rem;
+  line-height: 1;
+  white-space: nowrap;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
+  user-select: none;
+  will-change: transform, opacity;
+  animation: blessing-burst 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes blessing-burst {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(10px) scale(0.9) rotate(0);
+  }
+  14% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translate3d(var(--blessing-dx), var(--blessing-dy), 0) scale(1)
+      rotate(var(--blessing-rotate));
+  }
+}

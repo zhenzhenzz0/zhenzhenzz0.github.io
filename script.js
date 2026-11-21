@@ -297,3 +297,50 @@ if (finePointer && !reduceMotion) {
 
   animateCursor();
 }
+
+const CLICK_EMOJIS = ['✨', '💫', '🌟', '🎨', '🫧', '💥', '🌈', '🍀', '💖', '🎵'];
+const CLICK_MESSAGES = ['欢迎光临', '今天也灵感满格', '祝你灵感大爆发', '好审美正在发生', '你的创意被看见了'];
+
+if (!reduceMotion) {
+  const burstLayer = document.createElement('div');
+  burstLayer.className = 'click-burst-layer';
+  burstLayer.setAttribute('aria-hidden', 'true');
+  document.body.append(burstLayer);
+
+  const interactiveSelector =
+    'a, button, input, textarea, select, label, summary, video, img, [role="button"]';
+
+  document.addEventListener('click', (event) => {
+    if (event.target.closest(interactiveSelector)) return;
+
+    const picked = [...CLICK_EMOJIS].sort(() => Math.random() - 0.5).slice(0, 4);
+    const message = CLICK_MESSAGES[Math.floor(Math.random() * CLICK_MESSAGES.length)];
+
+    picked.forEach((emoji) => {
+      const burst = document.createElement('span');
+      burst.className = 'emoji-burst';
+      burst.textContent = emoji;
+      burst.style.left = `${event.clientX}px`;
+      burst.style.top = `${event.clientY}px`;
+      burst.style.setProperty('--emoji-dx', `${(Math.random() - 0.5) * 140}px`);
+      burst.style.setProperty('--emoji-dy', `${-40 - Math.random() * 110}px`);
+      burst.style.setProperty('--emoji-rotate', `${(Math.random() - 0.5) * 90}deg`);
+      burst.style.setProperty('--emoji-size', `${18 + Math.random() * 14}px`);
+      burstLayer.append(burst);
+      window.setTimeout(() => burst.remove(), 950);
+    });
+
+    const blessing = document.createElement('span');
+    blessing.className = 'blessing-burst';
+    blessing.style.left = `${event.clientX}px`;
+    blessing.style.top = `${event.clientY}px`;
+    blessing.style.setProperty('--blessing-dx', `${(Math.random() - 0.5) * 28}px`);
+    blessing.style.setProperty('--blessing-dy', `${-78 - Math.random() * 44}px`);
+    blessing.style.setProperty('--blessing-rotate', `${(Math.random() - 0.5) * 10}deg`);
+    blessing.textContent = `${picked[0] ?? '✨'} ${message}`;
+    burstLayer.append(blessing);
+    window.setTimeout(() => blessing.remove(), 1550);
+
+    while (burstLayer.children.length > 30) burstLayer.firstElementChild.remove();
+  });
+}
