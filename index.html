@@ -6,7 +6,7 @@
     <meta name="description" content="林美言 — AIGC 视觉设计师个人作品集" />
     <meta name="theme-color" content="#000000" />
     <title>林美言® — AIGC Visual Designer</title>
-    <link rel="stylesheet" href="./styles.css?v=8" />
+    <link rel="stylesheet" href="./styles.css?v=9" />
   </head>
   <body>
     <div class="grain" aria-hidden="true"></div>
@@ -15,155 +15,171 @@
     </div>
     <div class="scroll-progress" aria-hidden="true"></div>
 
-    <header class="site-header">
-      <p class="header-meta">LIN MEIYAN<br />AIGC VISUAL DESIGNER</p>
-      <nav class="desktop-nav" aria-label="主导航">
-        <a href="#work">Work <span>01</span></a>
-        <a href="#project/mossio">Featured <span>02</span></a>
-        <a href="mailto:hello@linmeiyan.com">Contact <span>03</span></a>
+    <header class="site-header clone-site-header">
+      <a class="clone-brand" href="#hero">LIN MEIYAN</a>
+      <nav class="clone-nav-links" aria-label="主导航">
+        <a href="#hero">Home</a>
+        <a href="#work">Work</a>
+        <a href="#contact">联系我</a>
       </nav>
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav">
-        Menu
-      </button>
-      <div class="availability"><i></i> AVAILABLE FOR PROJECTS</div>
+      <div class="clone-nav-actions">
+        <a class="explore-pill" href="#work">Explore</a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+      </div>
     </header>
 
     <nav class="mobile-nav" id="mobile-nav" aria-label="移动端导航">
+      <a href="#hero">Home <span>00</span></a>
       <a href="#work">Work <span>01</span></a>
-      <a href="#project/mossio">Featured <span>02</span></a>
-      <a href="mailto:hello@linmeiyan.com">Contact <span>03</span></a>
+      <a href="#contact">联系我 <span>02</span></a>
     </nav>
 
     <main id="top">
-      <section class="hero collage-hero" aria-labelledby="hero-title">
-        <div class="hero-topline">
-          <span>WEG / AIGC</span>
-          <span>LIN MEIYAN — VISUAL DESIGNER</span>
-          <span>2024 — 26</span>
-          <span>CHINA / AVAILABLE</span>
-        </div>
-
-        <div class="collage-stage">
-          <div class="pixel-face" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-          <span class="collage-note note-top" aria-hidden="true">{ AIGC CREATIVE }</span>
-
-          <h1 class="collage-title" id="hero-title">
-            <span class="hero-line-name">1800线“女明星”</span>
-            <em>设计日常</em>
-          </h1>
-
-          <figure class="hero-ip-card" aria-label="林美言 AIGC 个人 IP 形象">
-            <img src="./assets/ip-character-cutout.png" alt="戴墨镜、穿绿色夹克并拿着设计杂志的个人 IP 形象" />
-          </figure>
-
-          <div class="coordinate-card" aria-hidden="true">
-            <span>29.56° N</span>
-            <span>106.33° E</span>
-            <small>AWAY FROM THE NOISE</small>
+      <section class="hero-carousel" id="hero" aria-label="首页轮播" aria-roledescription="carousel">
+        <article class="carousel-slide is-active" data-slide="0" data-theme="light" aria-hidden="false">
+          <div class="hero collage-hero" aria-labelledby="hero-title">
+            <div class="hero-topline">
+              <span>WEG / AIGC</span>
+              <span>LIN MEIYAN — VISUAL DESIGNER</span>
+              <span>2024 — 26</span>
+              <span>CHINA / AVAILABLE</span>
+            </div>
+            <div class="collage-stage">
+              <div class="pixel-face" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+              <span class="collage-note note-top" aria-hidden="true">{ AIGC CREATIVE }</span>
+              <h1 class="collage-title" id="hero-title">
+                <span class="hero-line-name">1800线“女明星”</span>
+                <em>设计日常</em>
+              </h1>
+              <figure class="hero-ip-card" aria-label="林美言 AIGC 个人 IP 形象">
+                <img src="./assets/ip-character-new.png" alt="戴墨镜、穿绿色夹克并拿着设计杂志的个人 IP 形象" />
+              </figure>
+              <div class="coordinate-card" aria-hidden="true">
+                <span>29.56° N</span><span>106.33° E</span><small>AWAY FROM THE NOISE</small>
+              </div>
+              <div class="role-label" aria-hidden="true"><i></i>AIGC 视觉设计师</div>
+              <div class="poster-symbol symbol-red" aria-hidden="true">2</div>
+              <div class="poster-symbol symbol-green" aria-hidden="true">9</div>
+              <div class="poster-symbol symbol-blue" aria-hidden="true">Q</div>
+              <div class="pixel-heart" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="scrap scrap-left" aria-hidden="true">摆烂</div>
+              <div class="scrap scrap-left-small" aria-hidden="true">凌晨三点</div>
+              <div class="scrap scrap-center" aria-hidden="true">天赋</div>
+              <div class="scrap scrap-right" aria-hidden="true">keep going</div>
+              <span class="orange-dot dot-one" aria-hidden="true"></span>
+              <span class="orange-dot dot-two" aria-hidden="true"></span>
+              <span class="orange-dot dot-three" aria-hidden="true"></span>
+              <p class="collage-intro reveal">林美言，AIGC 视觉设计师。<br />把灵感、算法和一点不合时宜的怪想法，做成新的视觉世界。</p>
+              <div class="collage-footer reveal"><span>AI IMAGE / ART DIRECTION / MOTION</span><span>YOUR NAME IS YOUR FIRST FILTER.</span></div>
+              <a class="scroll-cue collage-scroll reveal" href="#work"><span>SCROLL TO EXPLORE</span><i></i></a>
+            </div>
           </div>
+        </article>
 
-          <div class="role-label" aria-hidden="true">
-            <i></i>
-            AIGC 视觉设计师
-          </div>
+        <a class="carousel-slide carousel-work-slide" data-slide="1" data-theme="dark" href="#project/mossio" aria-hidden="true">
+          <img src="./assets/project-01.png" alt="MOSSIO 苔藓世界" />
+          <span class="slide-shade"></span>
+          <span class="slide-kicker">SELECTED WORLD / 01</span>
+          <span class="slide-number">01</span>
+          <span class="slide-title">MOSSIO</span>
+          <span class="slide-caption">AI Art Direction · World Building</span>
+        </a>
 
-          <div class="poster-symbol symbol-red" aria-hidden="true">2</div>
-          <div class="poster-symbol symbol-green" aria-hidden="true">9</div>
-          <div class="poster-symbol symbol-blue" aria-hidden="true">Q</div>
-          <div class="pixel-heart" aria-hidden="true">
-            <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-          </div>
+        <a class="carousel-slide carousel-work-slide" data-slide="2" data-theme="dark" href="#project/stillwater" aria-hidden="true">
+          <img src="./assets/project-02.jpg" alt="STILLWATER 雾山湖泊" loading="lazy" />
+          <span class="slide-shade"></span>
+          <span class="slide-kicker">SELECTED WORLD / 02</span>
+          <span class="slide-number">02</span>
+          <span class="slide-title">STILLWATER</span>
+          <span class="slide-caption">Visual Campaign · AI Image</span>
+        </a>
 
-          <div class="scrap scrap-left" aria-hidden="true">摆烂</div>
-          <div class="scrap scrap-left-small" aria-hidden="true">凌晨三点</div>
-          <div class="scrap scrap-center" aria-hidden="true">天赋</div>
-          <div class="scrap scrap-right" aria-hidden="true">keep going</div>
-          <span class="orange-dot dot-one" aria-hidden="true"></span>
-          <span class="orange-dot dot-two" aria-hidden="true"></span>
-          <span class="orange-dot dot-three" aria-hidden="true"></span>
+        <a class="carousel-slide carousel-work-slide" data-slide="3" data-theme="dark" href="#project/wild-signal" aria-hidden="true">
+          <img src="./assets/project-03.jpg" alt="WILD SIGNAL 日落森林" loading="lazy" />
+          <span class="slide-shade"></span>
+          <span class="slide-kicker">SELECTED WORLD / 03</span>
+          <span class="slide-number">03</span>
+          <span class="slide-title">WILD SIGNAL</span>
+          <span class="slide-caption">Concept Film · Motion Direction</span>
+        </a>
 
-          <p class="collage-intro reveal">
-            林美言，AIGC 视觉设计师。<br />
-            把灵感、算法和一点不合时宜的怪想法，做成新的视觉世界。
-          </p>
-
-          <div class="collage-footer reveal">
-            <span>AI IMAGE / ART DIRECTION / MOTION</span>
-            <span>YOUR NAME IS YOUR FIRST FILTER.</span>
-          </div>
-
-          <a class="scroll-cue collage-scroll reveal" href="#work">
-            <span>SCROLL TO EXPLORE</span>
-            <i></i>
-          </a>
+        <div class="hero-dots" aria-label="轮播分页">
+          <button class="is-active" type="button" data-slide-to="0" aria-label="第 1 页"></button>
+          <button type="button" data-slide-to="1" aria-label="第 2 页"></button>
+          <button type="button" data-slide-to="2" aria-label="第 3 页"></button>
+          <button type="button" data-slide-to="3" aria-label="第 4 页"></button>
         </div>
       </section>
 
-      <div id="work" class="project-reel">
-        <a class="project-spread" href="#project/mossio" data-cursor="VIEW">
-          <img src="./assets/project-01.png" alt="林美言作品：MOSSIO 苔藓与神社" />
-          <div class="spread-shade"></div>
-          <span class="spread-index">01</span>
-          <div class="spread-copy">
-            <span class="spread-year">(2025)</span>
-            <h2>MOSSIO</h2>
-            <div class="spread-tags"><span>AI Art Direction</span><span>World Building</span></div>
-          </div>
-          <span class="spread-action">VIEW PROJECT ↗</span>
-        </a>
+      <section class="clone-manifesto">
+        <p class="designer-words"><span>DESIGNER</span><span>WORDS.</span></p>
+        <p class="manifesto-copy">这里是一处仍在生长中的实验现场，让技术成为放大想象力的引擎，而不是替代判断与感受力的答案。<br />我更关心 AI 如何参与创作、触发偏离、制造新秩序。</p>
+        <div class="manifesto-collage" aria-label="作品拼贴">
+          <img class="collage-img c1" src="./assets/project-03.jpg" alt="森林作品" loading="lazy" />
+          <img class="collage-img c2" src="./assets/project-01.png" alt="苔藓作品" loading="lazy" />
+          <img class="collage-img c3" src="./assets/project-02.jpg" alt="湖泊作品" loading="lazy" />
+          <img class="collage-img c4" src="./assets/project-04.jpg" alt="落日作品" loading="lazy" />
+          <img class="collage-img c5" src="./assets/project-05.jpg" alt="海岸作品" loading="lazy" />
+          <div class="creative-ai">Creative <span>AI</span></div>
+          <a class="clone-outline-button" href="#work">查看更多 <b>→</b></a>
+        </div>
+        <div class="manifesto-strip"><img src="./assets/project-04.jpg" alt="雾山视觉作品" loading="lazy" /></div>
+      </section>
 
-        <a class="project-spread" href="#project/stillwater" data-cursor="VIEW">
-          <img src="./assets/project-02.jpg" alt="林美言作品：Stillwater 雾山湖泊" loading="lazy" />
-          <div class="spread-shade"></div>
-          <span class="spread-index">02</span>
-          <div class="spread-copy">
-            <span class="spread-year">(2025)</span>
-            <h2>STILLWATER</h2>
-            <div class="spread-tags"><span>Visual Campaign</span><span>AI Image</span></div>
+      <section class="recent-works" aria-labelledby="recent-title">
+        <div class="recent-heading">
+          <h2 id="recent-title">Recent <span>WORKs</span><br />Hey Creative Design<br />Just For <i>@Future</i></h2>
+          <span class="section-spark">✦</span>
+        </div>
+        <div class="recent-viewport">
+          <div class="recent-track">
+            <a href="#project/mossio"><img src="./assets/project-01.png" alt="MOSSIO" /></a>
+            <a href="#project/stillwater"><img src="./assets/project-02.jpg" alt="STILLWATER" /></a>
+            <a href="#project/wild-signal"><img src="./assets/project-03.jpg" alt="WILD SIGNAL" /></a>
+            <a href="#project/afterglow"><img src="./assets/project-04.jpg" alt="AFTERGLOW" /></a>
+            <a href="#project/terra"><img src="./assets/project-05.jpg" alt="TERRA" /></a>
+            <a href="#project/mossio"><img src="./assets/project-01.png" alt="" /></a>
+            <a href="#project/stillwater"><img src="./assets/project-02.jpg" alt="" /></a>
+            <a href="#project/wild-signal"><img src="./assets/project-03.jpg" alt="" /></a>
+            <a href="#project/afterglow"><img src="./assets/project-04.jpg" alt="" /></a>
+            <a href="#project/terra"><img src="./assets/project-05.jpg" alt="" /></a>
           </div>
-          <span class="spread-action">VIEW PROJECT ↗</span>
-        </a>
+        </div>
+      </section>
 
-        <a class="project-spread" href="#project/wild-signal" data-cursor="VIEW">
-          <img src="./assets/project-03.jpg" alt="林美言作品：Wild Signal 日落森林" loading="lazy" />
-          <div class="spread-shade"></div>
-          <span class="spread-index">03</span>
-          <div class="spread-copy">
-            <span class="spread-year">(2024)</span>
-            <h2>WILD<br />SIGNAL</h2>
-            <div class="spread-tags"><span>Concept Film</span><span>Motion Direction</span></div>
-          </div>
-          <span class="spread-action">VIEW PROJECT ↗</span>
-        </a>
+      <section class="creative-work" id="work">
+        <div class="creative-title-wrap">
+          <span>SELECTED / 2019—2026</span>
+          <h2>CREATIVE<br /><i>WORK</i></h2>
+          <p>一些有趣的创意化内容探索。</p>
+        </div>
+        <div class="work-card-grid">
+          <a class="work-card accent-lime" href="#project/mossio"><span class="card-icon">✦</span><small>Creative Visuals</small><h3>创意视觉</h3><p>AI 时代下技术赋能与视觉表达的融合实践探索</p><img src="./assets/project-01.png" alt="" loading="lazy" /><b>查看作品 →</b></a>
+          <a class="work-card accent-pink" href="#project/stillwater"><span class="card-icon">◫</span><small>Form Design</small><h3>构成设计</h3><p>极简形态下的点线面与多元视觉的研究</p><img src="./assets/project-02.jpg" alt="" loading="lazy" /><b>查看作品 →</b></a>
+          <a class="work-card accent-cyan" href="#project/wild-signal"><span class="card-icon">▣</span><small>IP scenario</small><h3>IP及场景</h3><p>个人 IP 与视觉场景的探索和融合</p><img src="./assets/project-03.jpg" alt="" loading="lazy" /><b>查看作品 →</b></a>
+          <a class="work-card accent-green" href="#project/afterglow"><span class="card-icon">▤</span><small>Art Direction</small><h3>视觉艺术</h3><p>从概念、氛围到完整视觉世界的建立</p><img src="./assets/project-04.jpg" alt="" loading="lazy" /><b>查看作品 →</b></a>
+          <a class="work-card accent-yellow" href="#project/terra"><span class="card-icon">✧</span><small>Dynamic vision</small><h3>动态视觉</h3><p>AI 时代下的动态影像与视觉节奏探索</p><img src="./assets/project-05.jpg" alt="" loading="lazy" /><b>查看作品 →</b></a>
+          <a class="work-card accent-purple" href="#project/mossio"><span class="card-icon">⌁</span><small>Beyond Design</small><h3>设计之外</h3><p>记录设计之外的观察与新时代技术探索</p><img src="./assets/project-01.png" alt="" loading="lazy" /><b>查看作品 →</b></a>
+        </div>
+      </section>
 
-        <a class="project-spread" href="#project/afterglow" data-cursor="VIEW">
-          <img src="./assets/project-04.jpg" alt="林美言作品：Afterglow 山间落日" loading="lazy" />
-          <div class="spread-shade"></div>
-          <span class="spread-index">04</span>
-          <div class="spread-copy">
-            <span class="spread-year">(2024)</span>
-            <h2>AFTER<br />GLOW</h2>
-            <div class="spread-tags"><span>AI Photography</span><span>Art Direction</span></div>
-          </div>
-          <span class="spread-action">VIEW PROJECT ↗</span>
-        </a>
+      <section class="future-cta">
+        <p>STOP OVERTHINKING</p>
+        <p>JUST <span>DO IT</span></p>
+        <p>FOR FUTURE</p>
+        <small>浪潮中思考与判断力愈发不可替代，无比的想象力和执行力才是 AI 时代的人的核心。</small>
+      </section>
 
-        <a class="project-spread" href="#project/terra" data-cursor="VIEW">
-          <img src="./assets/project-05.jpg" alt="林美言作品：Terra 海岸瀑布" loading="lazy" />
-          <div class="spread-shade"></div>
-          <span class="spread-index">05</span>
-          <div class="spread-copy">
-            <span class="spread-year">(2023)</span>
-            <h2>TERRA</h2>
-            <div class="spread-tags"><span>Brand World</span><span>Generative Image</span></div>
-          </div>
-          <div class="closing-links">
-            <span>HELLO@LINMEIYAN.COM</span>
-            <span>© 2026 林美言®</span>
-          </div>
-          <span class="spread-action">VIEW PROJECT ↗</span>
-        </a>
-      </div>
+      <footer class="clone-footer" id="contact">
+        <div class="footer-visual"><img src="./assets/project-03.jpg" alt="森林日落" loading="lazy" /><span>LIN MEIYAN © 2026</span></div>
+        <div class="footer-grid">
+          <div><h3>LIN MEIYAN</h3><p>AIGC Visual Designer<br />创造介于现实与想象之间的视觉世界。</p></div>
+          <div><h4>个人信息</h4><p><span>身份</span>AIGC 视觉设计师</p><p><span>方向</span>AI Image / Art Direction</p><p><span>状态</span>接受合作机会</p></div>
+          <div><h4>社媒主页</h4><p><span>小红书</span>更新中</p><p><span>站酷</span>更新中</p><p><span>Instagram</span>更新中</p></div>
+          <div><h4>联系我</h4><p><span>邮箱</span><a href="mailto:hello@linmeiyan.com">hello@linmeiyan.com</a></p><p><span>合作咨询</span>欢迎通过邮件联系</p></div>
+        </div>
+        <div class="footer-bottom"><span>© 2026 LIN MEIYAN · AIGC VISUAL DESIGNER</span><a href="#hero">BACK TO TOP ↑</a></div>
+      </footer>
     </main>
 
     <section class="detail-view" id="project-view" aria-live="polite" hidden>
@@ -202,6 +218,6 @@
       </a>
     </section>
 
-    <script src="./script.js?v=7"></script>
+    <script src="./script.js?v=9"></script>
   </body>
 </html>
