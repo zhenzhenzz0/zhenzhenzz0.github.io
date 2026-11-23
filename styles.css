@@ -2757,9 +2757,9 @@ body.hero-in-view .clone-site-header {
   margin: 0;
   color: #f2f0e8;
   font-family: var(--font-cn);
-  font-size: clamp(58px, 9vw, 144px);
+  font-size: clamp(52px, 7.5vw, 132px);
   font-weight: 600;
-  line-height: .98;
+  line-height: 1;
   letter-spacing: .02em;
 }
 
@@ -2947,10 +2947,10 @@ body.hero-in-view .clone-site-header {
 .recent-heading h2 {
   margin: 0;
   font-family: var(--font-cn);
-  font-size: clamp(40px, 6vw, 96px);
+  font-size: clamp(52px, 7.5vw, 132px);
   font-weight: 600;
-  line-height: 1.04;
-  letter-spacing: .01em;
+  line-height: 1;
+  letter-spacing: .02em;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -3050,16 +3050,16 @@ body.hero-in-view .clone-site-header {
   grid-row: span 2;
   margin: 0;
   font-family: var(--font-cn);
-  font-size: clamp(68px, 10vw, 170px);
+  font-size: clamp(52px, 7.5vw, 132px);
   font-weight: 600;
-  line-height: .98;
+  line-height: 1;
   letter-spacing: .02em;
 }
 
 .creative-title-wrap h2 i {
-  color: transparent;
+  color: #9cff3f;
   font-style: normal;
-  -webkit-text-stroke: 1px #f2f0e8;
+  -webkit-text-stroke: 0;
 }
 
 .creative-title-wrap p {
@@ -3538,7 +3538,7 @@ body.hero-in-view .clone-site-header {
   line-height: 1;
   letter-spacing: .02em;
   color: #f2f0e8;
-  font-size: clamp(44px, 7vw, 128px);
+  font-size: clamp(52px, 7.5vw, 132px);
   display: flex;
   align-items: baseline;
   gap: clamp(2px, .25vw, 6px);
@@ -3577,8 +3577,8 @@ body.hero-in-view .clone-site-header {
 
 .card-wall {
   position: relative;
-  height: clamp(720px, 82vh, 880px);
-  min-height: 680px;
+  height: clamp(860px, 96vh, 1020px);
+  min-height: 780px;
   overflow: hidden;
   background: #000;
   cursor: grab;
@@ -3595,9 +3595,8 @@ body.hero-in-view .clone-site-header {
   position: absolute;
   left: 0;
   right: 0;
-  top: clamp(280px, 32vw, 460px);
+  top: 0;
   bottom: 0;
-  height: auto;
   transform: none;
   display: flex;
   align-items: center;
