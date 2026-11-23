@@ -1795,8 +1795,9 @@ body {
   overflow: hidden;
   isolation: isolate;
   background:
-    radial-gradient(circle at 64% 32%, rgba(255, 208, 117, .34), transparent 28%),
-    linear-gradient(145deg, #e86608 0%, #ff8615 53%, #e55d00 100%);
+    radial-gradient(circle at 56% 24%, rgba(255, 255, 255, .9), transparent 44%),
+    radial-gradient(circle at 18% 84%, rgba(255, 255, 255, .55), transparent 40%),
+    linear-gradient(165deg, #efeee8 0%, #e8e6e0 52%, #dcdad3 100%);
   border-radius: 1px;
 }
 
@@ -1807,8 +1808,8 @@ body {
   z-index: -1;
   pointer-events: none;
   background:
-    linear-gradient(90deg, transparent calc(20% - .5px), rgba(62,27,4,.1) 20%, transparent calc(20% + .5px)),
-    linear-gradient(90deg, transparent calc(80% - .5px), rgba(62,27,4,.1) 80%, transparent calc(80% + .5px));
+    linear-gradient(90deg, transparent calc(20% - .5px), rgba(17,17,17,.05) 20%, transparent calc(20% + .5px)),
+    linear-gradient(90deg, transparent calc(80% - .5px), rgba(17,17,17,.05) 80%, transparent calc(80% + .5px));
 }
 
 .collage-stage::after {
@@ -1819,10 +1820,10 @@ body {
   top: 40%;
   width: clamp(60px, 8vw, 130px);
   aspect-ratio: 1;
-  opacity: .16;
+  opacity: .05;
   background:
-    linear-gradient(90deg, #fff 50%, transparent 50%) 0 0 / 25% 25%,
-    linear-gradient(#fff 50%, transparent 50%) 0 0 / 25% 25%;
+    linear-gradient(90deg, #111 50%, transparent 50%) 0 0 / 25% 25%,
+    linear-gradient(#111 50%, transparent 50%) 0 0 / 25% 25%;
 }
 
 .collage-hero .hero-topline {
@@ -1949,8 +1950,8 @@ body.hero-in-view .site-header {
   margin: .16em auto 0;
   padding: .06em .18em .12em;
   border: 2px solid #111;
-  background: #a9cc63;
-  box-shadow: 7px 7px 0 rgba(17, 17, 17, .18);
+  background: #a9dd3f;
+  box-shadow: 7px 7px 0 rgba(17, 17, 17, .14);
   font-style: normal;
   transform: rotate(-2.6deg);
 }
@@ -2147,7 +2148,7 @@ body.hero-in-view .site-header {
   height: 100%;
   object-fit: contain;
   object-position: 50% 50%;
-  filter: drop-shadow(14px 18px 16px rgba(67, 27, 2, .28));
+  filter: drop-shadow(10px 16px 18px rgba(25, 25, 25, .2));
   transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .5s ease;
 }
 
@@ -2213,7 +2214,7 @@ body.hero-in-view .site-header {
 .scrap {
   position: absolute;
   z-index: 1;
-  color: rgba(255, 247, 237, .5);
+  color: rgba(17, 17, 17, .13);
   font-family: var(--font-cn);
   font-size: clamp(54px, 7vw, 118px);
   font-weight: 700;
@@ -2232,15 +2233,16 @@ body.hero-in-view .site-header {
 .scrap-left-small {
   left: 48%;
   bottom: 5.5%;
-  color: rgba(255, 247, 237, .36);
+  color: rgba(17, 17, 17, .11);
   font-size: clamp(22px, 3.4vw, 55px);
   transform: rotate(-4deg);
 }
 
 .scrap-center {
   left: auto;
-  right: 3%;
-  bottom: 30%;
+  right: 29%;
+  bottom: 15%;
+  font-size: clamp(36px, 4.6vw, 76px);
   transform: rotate(-4deg);
 }
 
@@ -2262,6 +2264,8 @@ body.hero-in-view .site-header {
   width: 13px;
   height: 13px;
   transform: rotate(7deg);
+  filter: invert(1);
+  opacity: .34;
 }
 
 .pixel-heart i {
@@ -2339,8 +2343,8 @@ body.hero-in-view .site-header {
   justify-content: flex-end;
   gap: 60px;
   padding-top: 10px;
-  border-top: 1px solid rgba(52,22,4,.28);
-  color: #3e210e;
+  border-top: 1px solid rgba(17, 17, 17, .16);
+  color: #3a3a35;
   font-family: "Courier New", monospace;
   font-size: 7px;
   letter-spacing: .04em;
@@ -2544,6 +2548,10 @@ body.hero-in-view .site-header {
 
   .symbol-green {
     width: 31%;
+  }
+
+  .scrap-left {
+    display: none;
   }
 
   .symbol-blue {
