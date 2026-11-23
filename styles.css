@@ -3153,6 +3153,11 @@ body.hero-in-view .clone-site-header {
   transform: scale(1.035);
 }
 
+.work-card img.fit-contain {
+  object-fit: contain;
+  background: #15171a;
+}
+
 .work-card b {
   color: var(--card-accent);
   font-size: 12px;
