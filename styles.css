@@ -3035,8 +3035,8 @@ body.hero-in-view .clone-site-header {
 
 .creative-title-wrap {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: end;
+  grid-template-columns: 1fr;
+  gap: clamp(14px, 1.6vw, 24px);
   margin-bottom: clamp(80px, 9vw, 140px);
 }
 
@@ -3047,7 +3047,7 @@ body.hero-in-view .clone-site-header {
 }
 
 .creative-title-wrap h2 {
-  grid-row: span 2;
+  grid-row: auto;
   margin: 0;
   font-family: var(--font-cn);
   font-size: clamp(52px, 7.5vw, 132px);
@@ -3063,7 +3063,7 @@ body.hero-in-view .clone-site-header {
 }
 
 .creative-title-wrap p {
-  justify-self: end;
+  justify-self: start;
   margin: 0;
   color: #777;
   font-family: var(--font-cn);
