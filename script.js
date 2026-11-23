@@ -304,23 +304,182 @@ if (!reduceMotion) {
 }
 
 const manifesto = document.querySelector('.clone-manifesto');
-const fanCollage = document.querySelector('.fan-collage');
+const folderStage = document.querySelector('#folder-stage');
 
-if (manifesto && fanCollage) {
-  if (reduceMotion || !('IntersectionObserver' in window)) {
-    manifesto.classList.add('is-visible');
-  } else {
-    const fanObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          manifesto.classList.add('is-visible');
-          fanObserver.disconnect();
-        });
-      },
-      { threshold: 0.3 },
-    );
+if (manifesto && folderStage) {
+  const folderCards = Array.from(folderStage.querySelectorAll('.folder-card'));
+  const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+  const clamp01 = (v) => Math.max(0, Math.min(1, v));
+  let folderTarget = reduceMotion ? 1 : 0;
+  let folderCurrent = folderTarget;
+  let folderActive = false;
 
-    fanObserver.observe(fanCollage);
+  const updateFolderTarget = () => {
+    if (reduceMotion) { folderTarget = 1; return; }
+    const rect = folderStage.getBoundingClientRect();
+    const vh = window.innerHeight;
+    folderTarget = clamp01((vh - rect.top) / (vh * 0.85));
+  };
+
+  const applyFolder = (p) => {
+    const w = folderStage.clientWidth;
+    const h = folderStage.clientHeight;
+    folderStage.style.transform = `scale(${0.94 + 0.06 * p}) rotate(${(1 - p) * -6}deg)`;
+    folderCards.forEach((card, i) => {
+      const pi = easeOut(clamp01(p * 1.3 - i * 0.03));
+      const bx = parseFloat(card.style.getPropertyValue('--fx')) / 100 * w + card.offsetWidth / 2;
+      const by = parseFloat(card.style.getPropertyValue('--fy')) / 100 * h + card.offsetHeight / 2;
+      const dx = (w / 2 - bx) * (1 - pi) * 0.92;
+      const dy = (h / 2 - by) * (1 - pi) * 0.92;
+      const rot = (1 - pi) * (i % 2 ? 36 : -36);
+      const scale = 0.45 + 0.55 * pi;
+      card.style.transform = `translate3d(${dx}px, ${dy}px, 0) rotate(${rot}deg) scale(${scale})`;
+      card.style.opacity = pi < 0.02 ? 0 : Math.min(1, pi * 1.6);
+    });
+  };
+
+  const folderTick = () => {
+    folderCurrent += (folderTarget - folderCurrent) * 0.14;
+    if (Math.abs(folderTarget - folderCurrent) < 0.001) folderCurrent = folderTarget;
+    applyFolder(folderCurrent);
+    if (folderActive) requestAnimationFrame(folderTick);
+  };
+
+  window.addEventListener('scroll', updateFolderTarget, { passive: true });
+  window.addEventListener('resize', updateFolderTarget);
+
+  const folderObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      folderActive = entry.isIntersecting;
+      if (folderActive) {
+        manifesto.classList.add('is-visible');
+        updateFolderTarget();
+        requestAnimationFrame(folderTick);
+      }
+    });
+  }, { rootMargin: '15% 0px 15% 0px' });
+
+  updateFolderTarget();
+  applyFolder(folderTarget);
+  folderObserver.observe(folderStage);
+}
+
+const wallSection = document.querySelector('.card-wall');
+const wallCylinder = document.querySelector('#card-wall-cylinder');
+
+if (wallSection && wallCylinder) {
+  const wallImages = [
+    'wall-01', 'wall-02', 'wall-03', 'wall-04', 'wall-05', 'wall-06',
+    'project-01', 'project-02', 'project-03', 'project-04', 'project-05',
+  ];
+  const COLS = 20;
+  const STEP = 360 / COLS;
+  const wallCols = [];
+
+  for (let i = 0; i < COLS; i++) {
+    const col = document.createElement('div');
+    col.className = 'wall-col';
+    for (let j = 0; j < 3; j++) {
+      const card = document.createElement('div');
+      card.className = 'wall-card';
+      const img = document.createElement('img');
+      img.src = `./assets/${wallImages[(i * 3 + j) % wallImages.length]}.webp`;
+      img.alt = '';
+      img.loading = 'lazy';
+      img.draggable = false;
+      card.appendChild(img);
+      col.appendChild(card);
+    }
+    wallCylinder.appendChild(col);
+    wallCols.push(col);
   }
+
+  let cardW = 242, cardH = 228, cardGap = 11.232, wallR = 808.5, fadeEnd = 295, fadeRange = 155;
+
+  const layoutWall = () => {
+    const s = Math.min(1, Math.max(0.5, wallSection.clientWidth / 1440));
+    cardW = 242 * s; cardH = 228 * s; cardGap = 11.232 * s;
+    wallR = 808.5 * s; fadeEnd = 295 * s; fadeRange = 155 * s;
+    const colH = cardH * 3 + cardGap * 2;
+    wallCols.forEach((col) => {
+      col.style.width = `${cardW}px`;
+      col.style.height = `${colH}px`;
+      col.style.left = `${-cardW / 2}px`;
+      col.style.top = `${-colH / 2}px`;
+      Array.from(col.children).forEach((card, j) => {
+        card.style.width = `${cardW}px`;
+        card.style.height = `${cardH}px`;
+        card.style.top = `${j * (cardH + cardGap)}px`;
+      });
+    });
+  };
+
+  let wallOffset = 0;
+  let wallVelocity = 0;
+  let wallDragging = false;
+  let wallLastX = 0;
+  let wallActive = false;
+  const WALL_AUTO = reduceMotion ? 0 : 0.03;
+
+  const renderWall = () => {
+    for (let i = 0; i < COLS; i++) {
+      let a = (i * STEP + wallOffset) % 360;
+      if (a > 180) a -= 360;
+      if (a < -180) a += 360;
+      const rad = a * Math.PI / 180;
+      const x = -wallR * Math.sin(rad);
+      const z = wallR * (1 - Math.cos(rad));
+      const opacity = Math.max(0, Math.min(1, (fadeEnd - z) / fadeRange));
+      const col = wallCols[i];
+      col.style.transform = `translate3d(${x}px, 0, ${z}px) rotateY(${a}deg)`;
+      col.style.opacity = opacity;
+      col.style.zIndex = Math.round(z);
+      col.style.pointerEvents = opacity < 0.05 ? 'none' : 'auto';
+    }
+  };
+
+  const wallTick = () => {
+    if (!wallDragging) {
+      wallOffset += WALL_AUTO + wallVelocity;
+      wallVelocity *= 0.94;
+      if (Math.abs(wallVelocity) < 0.0005) wallVelocity = 0;
+    }
+    renderWall();
+    if (wallActive) requestAnimationFrame(wallTick);
+  };
+
+  wallSection.addEventListener('pointerdown', (event) => {
+    wallDragging = true;
+    wallLastX = event.clientX;
+    wallVelocity = 0;
+    wallSection.classList.add('is-dragging');
+    wallSection.setPointerCapture(event.pointerId);
+  });
+
+  wallSection.addEventListener('pointermove', (event) => {
+    if (!wallDragging) return;
+    const dx = event.clientX - wallLastX;
+    wallLastX = event.clientX;
+    wallOffset += dx * 0.06;
+    wallVelocity = dx * 0.06;
+  });
+
+  const endWallDrag = () => {
+    wallDragging = false;
+    wallSection.classList.remove('is-dragging');
+  };
+  wallSection.addEventListener('pointerup', endWallDrag);
+  wallSection.addEventListener('pointercancel', endWallDrag);
+
+  const wallObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      wallActive = entry.isIntersecting;
+      if (wallActive) requestAnimationFrame(wallTick);
+    });
+  }, { rootMargin: '10% 0px 10% 0px' });
+
+  layoutWall();
+  renderWall();
+  window.addEventListener('resize', () => { layoutWall(); renderWall(); });
+  wallObserver.observe(wallSection);
 }
