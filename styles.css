@@ -2746,7 +2746,7 @@ body.hero-in-view .clone-site-header {
 .clone-manifesto {
   position: relative;
   overflow: hidden;
-  padding: clamp(150px, 18vw, 280px) var(--pad) clamp(90px, 12vw, 180px);
+  padding: clamp(180px, 20vw, 320px) var(--pad) clamp(120px, 14vw, 220px);
   background: #000;
 }
 
@@ -2769,7 +2769,7 @@ body.hero-in-view .clone-site-header {
 
 .manifesto-copy {
   max-width: 780px;
-  margin: -10px auto 70px;
+  margin: clamp(28px, 4vw, 52px) auto clamp(60px, 7vw, 100px);
   color: #777;
   font-family: var(--font-cn);
   font-size: clamp(11px, 1.05vw, 15px);
@@ -2918,7 +2918,7 @@ body.hero-in-view .clone-site-header {
 .manifesto-strip {
   width: 100%;
   height: clamp(280px, 30vw, 430px);
-  margin-top: 70px;
+  margin-top: clamp(70px, 9vw, 130px);
   overflow: hidden;
 }
 
@@ -2932,7 +2932,7 @@ body.hero-in-view .clone-site-header {
 }
 
 .recent-works {
-  padding: 30px 0 150px;
+  padding: clamp(90px, 11vw, 170px) 0 clamp(120px, 14vw, 220px);
   overflow: hidden;
   background: #000;
 }
@@ -2965,7 +2965,7 @@ body.hero-in-view .clone-site-header {
 }
 
 .recent-viewport {
-  margin-top: 70px;
+  margin-top: clamp(60px, 7vw, 100px);
   overflow: hidden;
 }
 
@@ -3011,7 +3011,7 @@ body.hero-in-view .clone-site-header {
 }
 
 .creative-work {
-  padding: clamp(90px, 12vw, 180px) var(--pad);
+  padding: clamp(140px, 16vw, 260px) var(--pad) clamp(140px, 16vw, 260px);
   background: #000;
 }
 
@@ -3019,7 +3019,7 @@ body.hero-in-view .clone-site-header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: end;
-  margin-bottom: 70px;
+  margin-bottom: clamp(80px, 9vw, 140px);
 }
 
 .creative-title-wrap > span {
