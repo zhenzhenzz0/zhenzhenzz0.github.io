@@ -369,8 +369,9 @@ const wallCylinder = document.querySelector('#card-wall-cylinder');
 
 if (wallSection && wallCylinder) {
   const wallImages = [
-    'wall-01', 'wall-02', 'wall-03', 'wall-04', 'wall-05', 'wall-06',
-    'project-01', 'project-02', 'project-03', 'project-04', 'project-05',
+    'wall-01', 'wall-02', 'wall-03', 'wall-04', 'wall-05',
+    'wall-06', 'wall-07', 'wall-08', 'wall-09', 'wall-10',
+    'wall-11', 'wall-12', 'wall-13', 'wall-14', 'wall-15',
   ];
   const COLS = 20;
   const STEP = 360 / COLS;
