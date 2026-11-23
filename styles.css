@@ -3520,12 +3520,9 @@ body.hero-in-view .clone-site-header {
 
 /* 3D card wall */
 .card-wall-heading {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: clamp(60px, 8vw, 110px);
+  position: relative;
   z-index: 12;
-  padding: 0 var(--pad);
+  padding: clamp(90px, 11vw, 170px) var(--pad) clamp(60px, 7vw, 100px);
   display: flex;
   flex-direction: column;
   gap: clamp(10px, 1.2vw, 18px);
@@ -3577,14 +3574,15 @@ body.hero-in-view .clone-site-header {
 
 .card-wall {
   position: relative;
-  height: clamp(860px, 96vh, 1020px);
-  min-height: 780px;
+  height: auto;
+  min-height: 0;
   overflow: hidden;
   background: #000;
   cursor: grab;
   user-select: none;
   -webkit-user-select: none;
   touch-action: pan-y;
+  padding-bottom: clamp(100px, 12vw, 180px);
 }
 
 .card-wall.is-dragging {
@@ -3592,16 +3590,19 @@ body.hero-in-view .clone-site-header {
 }
 
 .card-wall-stage {
-  position: absolute;
+  position: relative;
   left: 0;
   right: 0;
   top: 0;
-  bottom: 0;
+  height: clamp(640px, 72vh, 780px);
+  min-height: 560px;
+  bottom: auto;
   transform: none;
   display: flex;
   align-items: center;
   justify-content: center;
   perspective: 900px;
+  overflow: hidden;
   perspective-origin: 50% 50%;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 82%, transparent 100%);
   mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 82%, transparent 100%);
