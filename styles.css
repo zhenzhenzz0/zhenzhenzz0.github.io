@@ -2893,8 +2893,8 @@ body.hero-in-view .clone-site-header {
 }
 
 .creative-ai span {
-  color: transparent;
-  -webkit-text-stroke: 1px #9cff3f;
+  color: #9cff3f;
+  -webkit-text-stroke: 0;
 }
 
 .clone-outline-button {
@@ -2951,10 +2951,28 @@ body.hero-in-view .clone-site-header {
   font-weight: 600;
   line-height: 1.04;
   letter-spacing: .01em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .recent-heading h2 span,
-.recent-heading h2 i {
+.recent-heading h2 > i {
+  color: #9cff3f;
+  font-style: normal;
+}
+
+.recent-note {
+  margin: clamp(10px, 1.2vw, 18px) 0 0;
+  font-family: var(--font-cn);
+  font-size: clamp(11px, 1.05vw, 15px);
+  font-weight: 400;
+  color: #888;
+  line-height: 1.85;
+  letter-spacing: .01em;
+}
+
+.recent-note i {
   color: #9cff3f;
   font-style: normal;
 }
@@ -3501,10 +3519,74 @@ body.hero-in-view .clone-site-header {
 }
 
 /* 3D card wall */
+.card-wall-heading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: clamp(60px, 8vw, 110px);
+  z-index: 12;
+  padding: 0 var(--pad);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4px, .6vw, 12px);
+  pointer-events: none;
+}
+
+.card-wall-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.045em;
+  color: #f2f0e8;
+  text-transform: uppercase;
+  font-size: clamp(36px, 5.5vw, 96px);
+  display: flex;
+  align-items: baseline;
+  gap: clamp(2px, .25vw, 6px);
+}
+
+.card-wall-title b {
+  color: #9cff3f;
+  font-weight: 700;
+}
+
+.card-wall-title-line1 {
+  gap: clamp(6px, 1.4vw, 22px);
+  font-size: clamp(32px, 4.6vw, 72px);
+}
+
+.card-wall-title-line2 {
+  font-size: clamp(54px, 8vw, 132px);
+}
+
+.card-wall-title-line3 {
+  font-size: clamp(54px, 8vw, 132px);
+}
+
+.wall-arrow-capsule {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(44px, 5.5vw, 88px);
+  height: clamp(22px, 3vw, 44px);
+  border-radius: 999px;
+  background: #9cff3f;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 2px rgba(156, 255, 63, .15);
+}
+
+.wall-arrow-capsule i {
+  font-style: normal;
+  font-size: clamp(20px, 2.8vw, 40px);
+  color: #000;
+  line-height: 1;
+}
+
 .card-wall {
   position: relative;
-  height: 90vh;
+  height: clamp(640px, 80vh, 860px);
   min-height: 620px;
+  padding-top: clamp(140px, 16vw, 240px);
   overflow: hidden;
   background: #000;
   cursor: grab;
