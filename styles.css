@@ -2746,7 +2746,7 @@ body.hero-in-view .clone-site-header {
 .clone-manifesto {
   position: relative;
   overflow: hidden;
-  padding: clamp(180px, 20vw, 320px) var(--pad) clamp(120px, 14vw, 220px);
+  padding: clamp(80px, 10vw, 150px) var(--pad) clamp(80px, 10vw, 150px);
   background: #000;
 }
 
@@ -2769,7 +2769,7 @@ body.hero-in-view .clone-site-header {
 
 .manifesto-copy {
   max-width: 780px;
-  margin: clamp(28px, 4vw, 52px) auto clamp(60px, 7vw, 100px);
+  margin: clamp(18px, 2.5vw, 36px) auto clamp(40px, 5vw, 70px);
   color: #777;
   font-family: var(--font-cn);
   font-size: clamp(11px, 1.05vw, 15px);
