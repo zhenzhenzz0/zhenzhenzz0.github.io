@@ -384,7 +384,7 @@ if (wallSection && wallCylinder) {
       const card = document.createElement('div');
       card.className = 'wall-card';
       const img = document.createElement('img');
-      img.src = `./assets/${wallImages[(i * 3 + j) % wallImages.length]}.webp?v=2`;
+      img.src = `./assets/${wallImages[(i * 3 + j) % wallImages.length]}.webp?v=3`;
       img.alt = '';
       img.loading = 'lazy';
       img.draggable = false;
