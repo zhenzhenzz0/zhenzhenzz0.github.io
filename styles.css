@@ -3528,18 +3528,17 @@ body.hero-in-view .clone-site-header {
   padding: 0 var(--pad);
   display: flex;
   flex-direction: column;
-  gap: clamp(4px, .6vw, 12px);
+  gap: clamp(10px, 1.2vw, 18px);
   pointer-events: none;
 }
 
 .card-wall-title {
-  font-family: var(--font-display);
-  font-weight: 700;
+  font-family: var(--font-cn);
+  font-weight: 600;
   line-height: 1;
-  letter-spacing: -.045em;
+  letter-spacing: .02em;
   color: #f2f0e8;
-  text-transform: uppercase;
-  font-size: clamp(36px, 5.5vw, 96px);
+  font-size: clamp(44px, 7vw, 128px);
   display: flex;
   align-items: baseline;
   gap: clamp(2px, .25vw, 6px);
@@ -3547,20 +3546,7 @@ body.hero-in-view .clone-site-header {
 
 .card-wall-title b {
   color: #9cff3f;
-  font-weight: 700;
-}
-
-.card-wall-title-line1 {
-  gap: clamp(6px, 1.4vw, 22px);
-  font-size: clamp(32px, 4.6vw, 72px);
-}
-
-.card-wall-title-line2 {
-  font-size: clamp(54px, 8vw, 132px);
-}
-
-.card-wall-title-line3 {
-  font-size: clamp(54px, 8vw, 132px);
+  font-weight: 600;
 }
 
 .wall-arrow-capsule {
@@ -3582,11 +3568,17 @@ body.hero-in-view .clone-site-header {
   line-height: 1;
 }
 
+.card-wall-sub {
+  font-family: var(--font-display);
+  font-size: 8px;
+  letter-spacing: .14em;
+  color: #666;
+}
+
 .card-wall {
   position: relative;
-  height: clamp(640px, 80vh, 860px);
-  min-height: 620px;
-  padding-top: clamp(140px, 16vw, 240px);
+  height: clamp(720px, 82vh, 880px);
+  min-height: 680px;
   overflow: hidden;
   background: #000;
   cursor: grab;
@@ -3603,9 +3595,10 @@ body.hero-in-view .clone-site-header {
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
-  height: 130%;
-  transform: translateY(-50%);
+  top: clamp(280px, 32vw, 460px);
+  bottom: 0;
+  height: auto;
+  transform: none;
   display: flex;
   align-items: center;
   justify-content: center;
